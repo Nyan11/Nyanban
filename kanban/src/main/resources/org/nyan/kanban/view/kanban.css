@@ -1,0 +1,101 @@
+/*
+ * --------------------------------------------------------------------------------------------------------------
+ * Styles for KanbanView.
+ * 
+ * colors:
+ * 
+ * Porcelain        #edf2f2     Light shades (Background)
+ * Bermuda Gray     #6691A8     Light accent
+ * Bison Hide 	    #c4b0a3 	Main brand color
+ * Regent Gray      #80889a     Dark accent 
+ * Rolling Stone 	#747a7e 	Dark shades (text)
+ * 
+ * Bison Hide 	    #c4b0a3 	Primary
+ * Rolling Stone 	#747a7e 	Info
+ * Fern 	        #70af69 	Success
+ * Fuel Yellow 	    #ed9f31 	Warning
+ * Pomegranate 	    #f44336 	Danger
+ * 
+ */
+ 
+.root {
+	-kanban-light:        #EEF1F2;
+	-kanban-light-accent: #E8DDB5;
+	-kanban-main:         #76BCD4;
+	-kanban-main-faint:   #76BCD422;
+	-kanban-dark-accent:  #7A5F64;
+	-kanban-dark:         #273141;
+	
+	
+    
+    -fx-base: -kanban-light;
+    -fx-accent: -kanban-light-accent;
+    -fx-default-button: -kanban-light-accent;
+    -fx-focus-color: -kanban-main;
+    -fx-faint-focus-color: -kanban-main-faint;
+    -fx-focused-text-base-color : ladder(
+            -fx-selection-bar,
+            -fx-light-text-color 45%,
+            -fx-dark-text-color 46%,
+            -fx-dark-text-color 59%,
+            -fx-mid-text-color 60%
+        );
+    -fx-focused-mark-color : -fx-focused-text-base-color;
+    
+    
+    -kanban-color-primary:     #E8DDB5;
+ 	-kanban-color-info:        #AC9363;
+ 	-kanban-color-success:     #70af69;
+ 	-kanban-color-warning:     #ed9f31;
+ 	-kanban-color-danger:      #f44336;
+}
+
+.text-input:focused {
+    -fx-highlight-text-fill: ladder(
+        -fx-highlight-fill,
+        -fx-light-text-color 45%,
+        -fx-dark-text-color  46%,
+        -fx-dark-text-color  59%,
+        -fx-mid-text-color   60%
+    );
+}
+ 
+.danger-button {
+	-fx-background-color: -kanban-color-danger;
+}
+
+.primary-color {
+	-fx-background-color: -kanban-color-primary;
+}
+
+.secondary-button {
+	-fx-background-color: -kanban-color-info;
+}
+
+.success-button{
+	-fx-background-color: -kanban-color-success;
+}
+
+.tab-pane > .tab-header-area > .tab-header-background {
+ 	-fx-background-color: -kanban-light-accent;
+	-fx-spacing: 20px;
+}
+
+.board-view {
+	-fx-background-color: -kanban-light;
+	-fx-spacing: 20px;
+}
+
+.board-column-view {
+	-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+	-fx-background-color: -kanban-light-accent;
+}
+
+.board-ticket-view {
+	-fx-background-color: -kanban-light;
+	-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+    -fx-background-radius: 6px;
+    -fx-border-color: -kanban-main transparent transparent transparent;
+    -fx-border-radius: 2px;
+    -fx-border-width: 3px;
+}
